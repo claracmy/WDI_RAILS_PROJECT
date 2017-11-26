@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Fossils App</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_VMynm23GhEQB1RzlVEFnFhwEjakvGuk"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -16,7 +17,7 @@
       <google-map center="{ lat: 0, lng: 0 }"></google-map>
     </div>
     <div class="selector-wrapper" id="scrollArea">
-      <li ng-repeat="taxon in vm.taxons | orderBy: '-noc'" ng-click="vm.addMarker(taxon.id)"><img ng-src="https://paleobiodb.org/data1.2/taxa/thumb.png?id={{taxon.img}}">{{ taxon.genus }} - {{taxon.noc}}</li>
+      <li ng-repeat="taxon in vm.taxons | orderBy: '-noc'" ng-click="vm.addMarker(taxon.id)"><p><img ng-src="https://paleobiodb.org/data1.2/taxa/thumb.png?id={{taxon.img}}">{{ taxon.genus }} - {{taxon.noc}}</p></li>
     </div>
     </div>
   </body>
