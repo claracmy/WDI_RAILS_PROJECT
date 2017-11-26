@@ -6,9 +6,18 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_VMynm23GhEQB1RzlVEFnFhwEjakvGuk"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.7/angular-resource.min.js"></script>
     <script src="app.js" charset="utf-8"></script>
   </head>
   <body ng-controller='mainCtrl as vm'>
-    <google-map center="{ lat: 0, lng: 0 }"></google-map>
+    <div class="main-wrapper">
+    <h1>Fossil Finder</h1>
+    <div class="map-wrapper">
+      <google-map center="{ lat: 0, lng: 0 }"></google-map>
+    </div>
+    <div class="selector-wrapper" id="scrollArea">
+      <li ng-repeat="taxon in vm.taxons | orderBy: '-noc'" ng-click="vm.addMarker(taxon.id)"><img ng-src="https://paleobiodb.org/data1.2/taxa/thumb.png?id={{taxon.img}}">{{ taxon.genus }} - {{taxon.noc}}</li>
+    </div>
+    </div>
   </body>
 </html>

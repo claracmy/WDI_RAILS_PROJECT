@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'json'
+
+Taxon.destroy_all
+
+response = HTTParty.get('https://paleobiodb.org/data1.2/taxa/list.json?name=dinosauria&rel=all_children&rank=genus&extant=no&show=img')
+json = JSON.parse(response.body)
+
+json['records'].each do | x |
+   img_reference = x['img'].tr("php:", "")
+   Taxon.create(genus: x['nam'], noc: x['noc'], img: img_reference)
+end

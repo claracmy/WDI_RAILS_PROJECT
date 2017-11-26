@@ -1,5 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
 .google-map {
-  width: 1200px;
+  width: 1100px;
   height: 800px;
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
+  float: left;
+}
+
+.selector-wrapper {
+  display: block;
+  float: left;
+}
+
+h1 {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+#scrollArea {
+  height: 800px;
+  overflow: auto;
 }
