@@ -41,7 +41,7 @@ app.factory('getTaxon', getTaxon);
 getTaxon.$inject = ['$resource'];
 function getTaxon($resource) {
   return $resource(
-    'http://localhost:3000/taxons/:id', {id: '@_id'}, {'update': { method: 'PUT' }});
+    'https://dinomap.herokuapp.com/taxons/:id', {id: '@_id'}, {'update': { method: 'PUT' }});
 }
 
 // Google Map Directive
